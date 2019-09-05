@@ -1,11 +1,14 @@
 %\usepackage[utf8]{inputenc}
 
-\usepackage{amsfonts}
+
 \usepackage{amssymb}
 \usepackage{amsmath} 
-\usepackage{mathtools}
-
+\usepackage{amsfonts}
 \usepackage{amsthm}
+
+\usepackage{dsfont}
+
+\usepackage{mathtools}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -17,32 +20,57 @@ linkcolor=blue,
 citecolor=OliveGreen,
 }
 
+%\usepackage{url}
+\usepackage{graphics}
+\graphicspath{ {./images/} }
+\usepackage{float}
+\usepackage{verbatim}
+
+
+
+% operators
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclareMathOperator{\Tr}{{Tr}}
+\DeclareMathOperator{\mat}{{Mat}}
+\DeclareMathOperator{\lin}{{Lin}}
+\DeclareMathOperator{\hybrid}{{hybrid}}
+\DeclareMathOperator{\Inf}{{inf}}
+\DeclareMathOperator{\diag}{{Diag}}
+\DeclareMathOperator{\ext}{{Ext}}
+\DeclareMathOperator{\Oh}{{O}}
+\DeclareMathOperator{\loh}{{o}}
+\DeclareMathOperator{\unif}{{unif}}
+
+
 
 \newcommand{\ket}[1]{{|#1\rangle}}
 \newcommand{\bra}[1]{{\langle #1|}}
-\newcommand{\Nats}{{\mathbb{N}}}
-\newcommand{\Ints}{{\mathbb{Z}}}
+\newcommand{\innerp}[2]{{\langle #1|#2\rangle}}
+\newcommand{\outerp}[2]{{|#1\rangle\langle #2|}}
+\newcommand{\densityMat}[1]{{|#1\rangle\langle #1|}}
+\newcommand{\Nats}{{\mathds{N}}}
+\newcommand{\Ints}{{\mathds{Z}}}
 \newcommand{\RR}{\mathds{R}}
 \newcommand{\CC}{\mathds{C}}
+\newcommand{\Prob}{\mathds{P}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\zerom}{{\textbf{0}}}
+\newcommand{\Id}{{\mathds{I}}}
 
 \newcommand{\footurl}[1]{{\footnote{\href[#1]{#1}}}}   
 
 
 
-\newcommand{\Rn}[1]{{\mathbb{R}^{#1}}}
-
+\newcommand{\Rn}[1]{{\mathds{R}^{#1}}}
 \newcommand{\ip}[2]{{\langle #1|#2\rangle}}
 \newcommand{\ipm}[2]{{\langle #1,#2\rangle}}
-
 \newcommand{\hE}{{\hat{E}}}
-\newcommand{\zerom}{{\textbf{0}}}
-\newcommand{\Id}{{\textbf{Id}}}
 \newcommand{\ispsd}{{\succeq}}
 
 
-\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
-\DeclareMathOperator{\Tr}{{Tr}}
-\DeclareMathOperator{\diag}{{Diag}}
+
+
+
 
 \newcommand{\Rc}{{\mathcal{R}}}
 \newcommand{\Gc}{{\mathcal{G}}}
@@ -55,12 +83,71 @@ citecolor=OliveGreen,
 \newcommand{\Hc}{{\mathcal{H}}}
 \newcommand{\Ac}{{\mathcal{A}}}
 \newcommand{\Bc}{{\mathcal{B}}}
+\newcommand{\Ic}{{\mathcal{I}}}
+\newcommand{\Tc}{{\mathcal{T}}}
+\newcommand{\Xc}{{\mathcal{X}}}
+\newcommand{\Yc}{{\mathcal{Y}}}
+\newcommand{\Zc}{{\mathcal{Z}}}
+\newcommand{\Sc}{{\mathcal{S}}}
+\newcommand{\Nc}{{\mathcal{N}}}
+\newcommand{\Mc}{{\mathcal{M}}}
+
+% for operator spaces
+\newcommand{\Eos}{{\mathds{E}}}
+\newcommand{\Fos}{{\mathds{F}}}
+
+% bolds
+\newcommand{\Eb}{{\textbf{E}}}
+\newcommand{\Fb}{{\textbf{F}}}
+\newcommand{\one}{{\textbf{1}}}
+
+\newcommand{\BC}{\{0,1\}}
+\newcommand{\BCm}{\{-1,1\}}
+\newcommand{\Hmin}{H_{\infty}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\minEnt}[1]{H_\infty[#1]}
+\newcommand{\ktmarkov}[3]{#1 \leftrightarrow #2 \leftrightarrow #3 }
+
 
 \newtheorem{theorem}{Theorem}
-
 \newtheorem{lemma}[theorem]{Lemma}
+
 \theoremstyle{definition}
 \newtheorem{defn}{Definition}[section]
 
+\newenvironment{sketch}{\paragraph{Sketch:}}{\hfill$\square$}
+\newenvironment{captioned}[3]{{
+%\begin{figure}[!htb]
+\begin{figure}[H]
+\centering
+\includegraphics[scale=#2]{#1}
+\caption{#3}
+\end{figure}
+}}
 
+
+\newtheorem{definition}{Definition}
+\newtheorem{thm}{Theorem}
+
+
+% self notes
+
+\newcommand{\Note}[1]{\textcolor{red}{#1}}
+\newcommand{\selfnote}[1]{\textcolor{blue}{ Self note: #1 }\\  }
+\newcommand{\selffnote}[1]{\textcolor{blue}{\footnote{\textcolor{blue}{Self note: #1}}}}
+
+\newcommand{\matbi}[4]{
+\begin{pmatrix} 
+#1 & #2 \\
+#1 & #4 
+\end{pmatrix}
+}
+
+
+% shorthands
+
+\newcommand{\cstar}{\text{C}^*}
+\newcommand{\eps}{\epsilon}
+\newcommand{\capeps}{\varepsilon}
 \newcommand{\schrodinger}{Schr\"{o}dinger}
+
